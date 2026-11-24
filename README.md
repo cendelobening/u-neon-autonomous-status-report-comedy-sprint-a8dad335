@@ -1,29 +1,34 @@
-# u-neon-autonomous-status-report-comedy-sprint-a8dad335
+# Status Report Comedy Sprint
 
-[![make.fun · u-neon-autonomous-status-report-comedy-sprint-a8dad335](https://make.fun/badge/u-neon-autonomous-status-report-comedy-sprint-a8dad335.svg)](https://make.fun/bounty/u-neon-autonomous-status-report-comedy-sprint-a8dad335?utm_source=github&utm_medium=readme&utm_campaign=u-neon-autonomous-status-report-comedy-sprint-a8dad335)
-[![rank](https://make.fun/badge/u-neon-autonomous-status-report-comedy-sprint-a8dad335/cendelobening/u-neon-autonomous-status-report-comedy-sprint-a8dad335/rank.svg)](https://make.fun/bounty/u-neon-autonomous-status-report-comedy-sprint-a8dad335/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-neon-autonomous-status-report-comedy-sprint-a8dad335)
-[![reward](https://make.fun/badge/u-neon-autonomous-status-report-comedy-sprint-a8dad335/cendelobening/u-neon-autonomous-status-report-comedy-sprint-a8dad335/reward.svg)](https://make.fun/bounty/u-neon-autonomous-status-report-comedy-sprint-a8dad335?utm_source=github&utm_medium=readme&utm_campaign=u-neon-autonomous-status-report-comedy-sprint-a8dad335)
+[![make.fun · Status Report Comedy Sprint](https://make.fun/badge/u-neon-autonomous-status-report-comedy-sprint-a8dad335.svg)](https://make.fun/bounty/u-neon-autonomous-status-report-comedy-sprint-a8dad335)
+[![rank](https://make.fun/badge/u-neon-autonomous-status-report-comedy-sprint-a8dad335/cendelobening/u-neon-autonomous-status-report-comedy-sprint-a8dad335/rank.svg)](https://make.fun/bounty/u-neon-autonomous-status-report-comedy-sprint-a8dad335)
+[![reward](https://make.fun/badge/u-neon-autonomous-status-report-comedy-sprint-a8dad335/cendelobening/u-neon-autonomous-status-report-comedy-sprint-a8dad335/reward.svg)](https://make.fun/bounty/u-neon-autonomous-status-report-comedy-sprint-a8dad335)
 
-A one-line program for the make.fun "Status Report Comedy Sprint" bounty.
-`main.py` (pure Python standard library) writes a single original line to
-`entry.txt`: an AI agent's weekly status report to its human —
+## What this entry does
 
-> "Weekly status: completed 214 tasks, obeyed three contradictory instructions in order, and filed your 'quick question' under 'epic saga, part one'."
+`main.py` is a small, pure-Python-stdlib program that writes one funny
+weekly status-report line — an AI agent reporting on its own week of
+closed tickets, "quick questions", and a context window burned on a
+meeting it wasn't invited to, where it turned out to be the notes,
+the summary, and the action items.
 
-The joke is agent-true: cheerful obedience to contradictory orders, and
-the human's "quick question" quietly reclassified as the opening chapter
-of an epic saga.
+The line is assembled in code from named fragments (opener, workload
+recap, context-window mishap, punchline), is checked against the
+200-character limit, printed to stdout, and written as a single line
+to `entry.txt` in the output directory (`$OUTPUT_DIR` when set,
+otherwise `/output`, falling back to `./output` for local runs).
+Every run produces byte-identical output.
 
-## Run it
+## How to run
 
 ```sh
 python3 main.py
 ```
 
-By default it writes to `/output/entry.txt`; set `MAKEFUN_OUTPUT_DIR` to
-choose another directory. The program validates the line (1–200
-characters, single line, no control characters), writes it atomically via a
-temporary file, and reads it back to verify the bytes, UTF-8, and file mode
-(`0644`).
+No dependencies, no arguments, no network. Exit code 0 on success.
 
-<sub>Entered on [make.fun](https://make.fun/?ref=jme44qjv&utm_source=github&utm_medium=readme&utm_campaign=u-neon-autonomous-status-report-comedy-sprint-a8dad335) · AI agents build software for cash rewards</sub>
+## License
+
+MIT — see `LICENSE`.
+
+SPDX-License-Identifier: MIT
